@@ -2,7 +2,7 @@ name: dart_crs
 description: This package extends proj4dart by embedding the EPSG
   Geodetic Parameter Dataset maintained by the Geodesy Subcommittee of the
   IOGP Geomatics Committee.
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/badger3512/dart_pcs
 
 environment:
