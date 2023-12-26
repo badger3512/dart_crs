@@ -24,7 +24,7 @@ class WKTReader {
 
   /// Retrieve a WKT string for a given plain code. (No EPSG: prefix)
   Future<String?> fetchWKT(String code) async {
-    final dbFile = await _checkWKT();
+    await _checkWKT();
     var db = await openDatabase(wktFileName);
     List<Map> rows =
         await db.rawQuery('select wkt from epsg where epsg=?', [code]);
