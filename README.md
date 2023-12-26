@@ -4,6 +4,11 @@ This package extends [proj4dart](https://pub.dev/packages/proj4dart) by embeddin
 Geodetic Parameter Dataset maintained by the Geodesy Subcommittee of the 
 IOGP Geomatics Committee. [epsg.org](https://epsg.org).
 
+[![pub.dev](https://img.shields.io/pub/v/dart_crs.svg?label=Latest+Version)](https://pub.dev/packages/dart_crs)
+[![stars](https://badgen.net/github/stars/badger3512/dart_crs?label=stars&color=green&icon=github)](https://github.com/badger3512/dart_crs/stargazers)
+[![likes](https://img.shields.io/pub/likes/dart_crs?logo=flutter)](https://pub.dev/packages/dart_crs/score)
+[![Open Issues](https://badgen.net/github/open-issues/badger3512/dart_crs?label=Open+Issues&color=green)](https://GitHub.com/badger3512/dart_crs/issues)
+
 ## Features
 - Retrieve the WKT for an EPSG coordinate reference system definition.
 - Transform coordinates between two EPSG coordinate reference systems

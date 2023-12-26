@@ -14,7 +14,6 @@ dependencies:
     sdk: flutter
   proj4dart: ^2.1.0
   path: ^1.8.3
-  flutter_archive: ^6.0.0
   sqflite: ^2.3.0
 
 dev_dependencies:
