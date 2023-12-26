@@ -211,21 +211,32 @@ class _MyHomePageState extends State<MyHomePage> {
                           content: Text('Invalid or missing target SRS')));
                       return;
                     }
-                    transform ??= await CRSFactory
-                        .createCoordinateTransformFromCodes(
-                            sourceCRS, targetCRS);
-                    final x = double.parse(xController.value.text);
-                    final y = double.parse(yController.value.text);
-                    sourcePoint = Point(x: x, y: y);
-                    targetPoint = transform!.transform(sourcePoint!);
-                    setState(() {
-                      if (targetPoint != null) {
-                        xTransformController.text =
-                            targetPoint!.x.toStringAsPrecision(11);
-                        yTransformController.text =
-                            targetPoint!.y.toStringAsPrecision(11);
+                    try {
+                      transform ??=
+                          await CRSFactory.createCoordinateTransformFromCodes(
+                              sourceCRS, targetCRS);
+                      final x = double.parse(xController.value.text);
+                      final y = double.parse(yController.value.text);
+                      sourcePoint = Point(x: x, y: y);
+                      targetPoint = transform!.transform(sourcePoint!);
+                      setState(() {
+                        if (targetPoint != null) {
+                          xTransformController.text =
+                              targetPoint!.x.toStringAsPrecision(11);
+                          yTransformController.text =
+                              targetPoint!.y.toStringAsPrecision(11);
+                        }
+                      });
+                    } on InvalidArgumentException {
+                      if (context.mounted) {
+                        FocusManager.instance.primaryFocus?.unfocus();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content:
+                                    Text('Invalid or missing source or target SRS')));
+                        return;
                       }
-                    });
+                    }
                   },
                 ),
                 const SizedBox(width: 30.0),
