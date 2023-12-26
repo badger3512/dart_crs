@@ -20,19 +20,20 @@ dependencies:
 
 Create a coordinate reference system:
 
-```dart
+```
 CoordinateReferenceSystem crsLatLong = await CRSFactory.createCRS('EPSG:4326');
 ```
 Transform a point between two coordinate reference systems.
 
-```dart
+```
 CoordinateTransform transform = 
     await CRSFactory.createCoordinateTransformFromCodes('EPSG:4326','EPSG:3183');
 Point geoPoint = Point(-45.2395,60.1425);
-Point gr96Point = transform!.transform(latLong);
+Point? gr96Point = transform!.transform(geoPoint);
+Point? inversePoint = transform!.inverse(gr96Point!);
 ```
 Extract a WKT definition:
-```dart
+```
 String wkt1 = await WKTReader().fetchWkt('EPSG:4326');
 ```
 ## Additional information
