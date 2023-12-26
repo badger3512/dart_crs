@@ -19,7 +19,7 @@ IOGP Geomatics Committee. [epsg.org](https://epsg.org).
 To use this plugin, add `dart_crs` as a dependency in your pubspec.yaml file. For example:
 ```yaml
 dependencies:
-  dart_crs: '^1.0.0'
+  dart_crs: '^1.0.2'
 ```
 ## Usage
 

@@ -1,3 +1,8 @@
+## 1.0.2
+
+- Update README.
+- Remove flutter_archive from dependencies.
+
 ## 1.0.1
 
 - Reformat project files
