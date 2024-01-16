@@ -1,7 +1,7 @@
 ## 1.0.3
 
 - Update to EPSG Dataset Version 11.003
-- 
+
 ## 1.0.2
 
 - Update README.
